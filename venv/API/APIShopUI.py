@@ -34,4 +34,10 @@ def products():
         }
     return data
 
+@app.route('/products/image', methods=['GET'])
+def images(): #Example http://127.0.0.1:5000/products/image?name=Adidas.jpg
+    name = request.args.get("name")
+    userImage = 'images/' + name
+    return render_template("image.html", user_image = userImage)
+    
 app.run(debug=True, threaded=True, port=5000)
