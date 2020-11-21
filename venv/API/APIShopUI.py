@@ -1,8 +1,37 @@
-from flask import Flask
-app = Flask(__name__)
+from flask import Flask, render_template, request, jsonify
+import os
+
+app = Flask(__name__, static_folder='images')
 
 @app.route('/', methods=['GET'])
 def home():
     return "Welcome to APIShop"
 
-app.run(threaded=True, port=5000)
+@app.route('/products/', methods=['GET'])
+def products():
+    data = {
+        "list": [
+            {
+            "id": 1,
+            "name": "trainers",
+            "brand": "Adidas",
+            "price": 80,
+            "currency": "€",
+            "image": "http://127.0.0.1/products/image?name=Adidas.jpg"
+            },
+            {
+            "id": 2,
+            "name": "trainers",
+            "brand": "Adidas 2",
+            "price": 65,
+            "currency": "€",
+            "image": "http://127.0.0.1/products/image?name=Adidas-2.jpg"
+            }
+        ],
+        "page": 1,
+        "pageSize": 2,
+        "size": "20"
+        }
+    return data
+
+app.run(debug=True, threaded=True, port=5000)
