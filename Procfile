@@ -1,1 +1,1 @@
-web: gunicorn app: APIShopUI
+web: gunicorn app: main

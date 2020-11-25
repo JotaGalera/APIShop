@@ -1,4 +1,4 @@
-from app.APIShopUI import APIShopUI
+from app.APIShopUI import app
 
 if __name__ == "__main__":
 	app.run()
