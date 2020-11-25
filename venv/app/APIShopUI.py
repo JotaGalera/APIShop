@@ -1,3 +1,4 @@
+# run api : source venv/bin/activate
 from flask import Flask, render_template, request, jsonify
 import os
 
