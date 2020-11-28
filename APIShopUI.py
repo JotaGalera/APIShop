@@ -17,7 +17,7 @@ def products():
             "brand": "Adidas",
             "price": 80,
             "currency": "€",
-            "image": "https://api-shop-ui.herokuapp.com/products/images/?name=Adidas.jpg"
+            "image": "https://api-shop-ui.herokuapp.com/products/get_images/?name=Adidas.jpg"
             },
             {
             "id": 2,
@@ -25,7 +25,7 @@ def products():
             "brand": "Adidas 2",
             "price": 65,
             "currency": "€",
-            "image": "https://api-shop-ui.herokuapp.com/products/images/?name=Adidas-2.jpg"
+            "image": "https://api-shop-ui.herokuapp.com/products/get_images/?name=Adidas-2.jpg"
             }
         ],
         "page": 1,
