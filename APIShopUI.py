@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
 
 app = Flask(__name__, static_folder='images')
@@ -35,10 +35,16 @@ def products():
     return data
 
 @app.route('/products/images/', methods=['GET'])
-def images(): #Example http://127.0.0.1:5000/products/image?name=Adidas.jpg
+def images(): #Example http://127.0.0.1:5000/products/images/?name=Adidas.jpg
     name = request.args.get("name")
-    userImage = '/images/' + name
-    return render_template("image.html", user_image = userImage)
-    
+    pathImage = '/images/' + name
+    return render_template("image.html", user_image = pathImage)
+
+@app.route('/products/get_images/', methods=['GET'])
+def get_image(): 
+    name = request.args.get("name")
+    path = '/images/'
+    return send_from_directory(app.static_folder, filename=name, mimetype='image/jpg')
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
