@@ -19,7 +19,7 @@ def products():
             "brand": "Adidas",
             "price": 80,
             "currency": "€",
-            "image": "https://api-shop-ui.herokuapp.com/products/get_images/?name=adidas.jpeg"
+            "image": "https://api-shop-ui.herokuapp.com/products/get_images/?name=adidas1.jpeg"
             },
             {
             "id": 2,
